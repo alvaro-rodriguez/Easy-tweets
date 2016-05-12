@@ -7,7 +7,7 @@ TEMPLATE_PATH.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi/views/
  
 @route('/')
 def index():
-    return '<strong>Hello World!</strong>'
+    #return '<strong>Hello World!</strong>'
 
 # This must be added in order to do correct path lookups for the views
 import os
