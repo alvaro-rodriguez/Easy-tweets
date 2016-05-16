@@ -12,8 +12,8 @@ AUTHENTICATE_URL = "https://api.twitter.com/oauth/authenticate?oauth_token="
 ACCESS_TOKEN_URL = "https://api.twitter.com/oauth/access_token"
 
 
-CONSUMER_KEY = "Aun no"
-CONSUMER_SECRET = "Tampoco"
+CONSUMER_KEY = "RV5QS2itE2SIeKhhiFU7XPChm"
+CONSUMER_SECRET = "uUIGAC7OkEw14laGP0Wv10lBEiVmo1fdFMKzFJDBBc5JCyeEXB"
 
 TOKENS = {}
 
