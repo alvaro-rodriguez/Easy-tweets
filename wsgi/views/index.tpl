@@ -50,35 +50,45 @@
           <ul class="srt-menu" id="menu-main-navigation">
               <li class="current"><a href="basic.html">Home page</a></li>
               <li><a href="basic-internal.html">Internal page demo</a></li>
-              <li><a href="#">menu item 3</a>
+              <li><a href="#">Acciones</a>
                   <ul>
-                      <li>
-                          <a href="#">menu item 3.1</a>
-                      </li>
                       <li class="current">
-                          <a href="#">menu item 3.2</a>
+                          <a href="#">tweets</a>
                           <ul>
                               <li><a href="/twiter">Publicar un tweet</a></li>
                               <li><a href="#">Ver tweets</a></li>
-                              <li><a href="#">Mensajería directa</a></li>
-                              <li><a href="#">Historial</a></li>
-                             
+                                                          
                           </ul>
                       </li>
+                      <li class="current">
+                          <a href="#">Mensajes directos</a>
+                          <ul>
+                              
+                              <li><a href="#">Mensajería directa</a></li>
+                              <li><a href="#">Historial de mensajes</a></li>
+                          </ul>
+                      </li>
+		       <li class="current">
+                          <a href="#">Estadísticas</a>
+                          <ul>
+                              
+                              <li><a href="#">Seguidores</a></li>
+                              
+                          </ul>
+                      </li>
+		      
                       <li><a href="#">menu item 3.3</a></li>
                       <li><a href="#">menu item 3.4</a></li>
                   </ul>
               </li>
               <li>
-                  <a href="#">menu item 4</a>
+                  <a href="#">[info de la página]</a>
                   <ul>
                       <li><a href="#">menu item 4.1</a></li>
                       <li><a href="#">menu item 4.2</a></li>
                   </ul>
               </li>
-              <li>
-                  <a href="#">menu item 5</a>
-              </li>	
+             
           </ul>     
 		</nav><!-- end main navigation -->
   
