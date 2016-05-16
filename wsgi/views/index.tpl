@@ -49,7 +49,7 @@
           <div class="menu-toggle">Menu</div>  
           <ul class="srt-menu" id="menu-main-navigation">
               <li class="current"><a href="basic.html">Home page</a></li>
-              <li><a href="basic-internal.html">Internal page demo</a></li>
+             
               <li><a href="#">Acciones</a>
                   <ul>
                       <li class="current">
@@ -83,10 +83,7 @@
               </li>
               <li>
                   <a href="#">[info de la página]</a>
-                  <ul>
-                      <li><a href="#">menu item 4.1</a></li>
-                      <li><a href="#">menu item 4.2</a></li>
-                  </ul>
+                 
               </li>
              
           </ul>     
