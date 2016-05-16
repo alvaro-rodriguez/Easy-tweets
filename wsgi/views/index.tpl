@@ -32,28 +32,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </style>
 </head>
 
@@ -80,11 +58,11 @@
                       <li class="current">
                           <a href="#">menu item 3.2</a>
                           <ul>
-                              <li><a href="#">menu item 3.2.1</a></li>
-                              <li><a href="#">menu item 3.2.2 with longer link name</a></li>
-                              <li><a href="#">menu item 3.2.3</a></li>
-                              <li><a href="#">menu item 3.2.4</a></li>
-                              <li><a href="#">menu item 3.2.5</a></li>
+                              <li><a href="/twiter">Publicar un tweet</a></li>
+                              <li><a href="#">Ver tweets</a></li>
+                              <li><a href="#">Mensajería directa</a></li>
+                              <li><a href="#">Historial</a></li>
+                             
                           </ul>
                       </li>
                       <li><a href="#">menu item 3.3</a></li>
@@ -156,52 +134,16 @@
 	<section id="content" class="wide-content">
       <div class="row">	
         <div class="grid_4">
-        	<h1 class="first-header">Brazil!</h1>
+        	<h1 class="first-header">Introducción</h1>
             <img src="images/basic-pic1.jpg" />
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            <p>[Aquí tengo que poner la intoducción]</p>
         </div>
      
 
 	  </div><!-- end row -->
 	</section><!-- end content area -->   
       
-      
-    <!-- columns demo, delete it!-->
-    <section id="columnsdemo" style="margin-bottom:60px; width:100%" class="clearfix">
-        <h2 style="width:100%; clear:both">Columns demo</h2>
-        <div class="grid_12">12</div>
-        
-        <div class="grid_1">1</div>
-        <div class="grid_11">11</div>
-        
-        <div class="grid_2">2</div>
-        <div class="grid_10">10</div>
-        
-        <div class="grid_3">3</div>
-        <div class="grid_9">9</div>
-        
-        <div class="grid_4">4</div>
-        <div class="grid_8">8</div>
-        
-        <div class="grid_5">5</div>
-        <div class="grid_7">7</div>
-        
-        <div class="grid_6">6</div>
-        <div class="grid_6">6</div>
-                
-        <div class="grid_4">4</div>
-        <div class="grid_4">4</div>
-        <div class="grid_4">4</div>
-        
-        <div class="grid_1">1</div>
-        <div class="grid_2">2</div>
-        <div class="grid_3">3</div>
-        <div class="grid_3">3</div>
-        <div class="grid_3">3</div>   
-    </section>
-    <!-- end columns demo -->  
-    
-      
+            
   </div><!-- #end div #main .wrapper -->
 
 
