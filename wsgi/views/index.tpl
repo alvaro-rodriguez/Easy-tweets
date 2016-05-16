@@ -31,29 +31,29 @@
 <!-- end JS-->
 
 
-<!-- columns demo style. DELETE IT! -->
-<style type="text/css">
-<!--
 
-#columnsdemo .grid_1,
-#columnsdemo .grid_2,
-#columnsdemo .grid_3,
-#columnsdemo .grid_4,
-#columnsdemo .grid_5,
-#columnsdemo .grid_6,
-#columnsdemo .grid_7,
-#columnsdemo .grid_8,
-#columnsdemo .grid_9,
-#columnsdemo .grid_10,
-#columnsdemo .grid_11,
-#columnsdemo .grid_12 {
-border: solid 1px #999;
-color:#999;
-text-align: center;
-margin-top:20px;
-padding:20px 15px;
-}
--->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </style>
 </head>
 
@@ -160,18 +160,8 @@ padding:20px 15px;
             <img src="images/basic-pic1.jpg" />
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
         </div>
-        
-        <div class="grid_4">
-        	<h1 class="first-header">Mexico!</h1>
-            <img src="images/basic-pic2.jpg" />
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-        </div>
-        
-        <div class="grid_4">
-        	<h1 class="first-header">US!</h1>
-            <img src="images/basic-pic3.jpg" />
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-        </div>
+     
+
 	  </div><!-- end row -->
 	</section><!-- end content area -->   
       
