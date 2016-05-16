@@ -77,8 +77,7 @@
                           </ul>
                       </li>
 		      
-                      <li><a href="#">menu item 3.3</a></li>
-                      <li><a href="#">menu item 3.4</a></li>
+                      
                   </ul>
               </li>
               <li>
