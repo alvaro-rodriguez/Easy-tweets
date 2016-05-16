@@ -106,5 +106,9 @@ def twitter_logout():
   response.set_cookie("access_token_secret", '',max_age=0)
   redirect('/twitter')
 
+import os
+from bottle import TEMPLATE_PATH
+TEMPLATE_PATH.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'],'wsgi/views/'))
 
+application=default_app()
 
