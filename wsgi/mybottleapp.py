@@ -91,14 +91,17 @@ def tweet_submit():
                    client_secret=CONSUMER_SECRET,
                    resource_owner_key=TOKENS["access_token"],
                    resource_owner_secret=TOKENS["access_token_secret"])
-  url = 'https://api.twitter.com/1.1/statuses/update.json'
-  r = requests.post(url=url,
-                      data={"status":texto},
-                      auth=oauth)
+ 
+@route('/timeline')
+def timeline():
+params={}
+r = requests.get('https://api.twitter.com/1.1/statuses/user_timeline.json',params}
+
   if r.status_code == 200:
-    return "<p>Tweet properly sent</p>"
+    doc=r.json()
+    return template('timeline.tpl',dic=doc)
   else:
-    return "<p>Unable to send tweet</p>"+r.content
+    redirect('/twittear')
 
 @get('/twitter_logout')
 def twitter_logout():
