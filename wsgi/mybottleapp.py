@@ -75,7 +75,7 @@ def twittear():
       TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
       return template('tweet')  
     else:
-      redirect('/twitter')
+      redirect('twitear.tpl')
 
 
 @post('/twittear')
