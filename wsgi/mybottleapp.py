@@ -107,7 +107,9 @@ def tweet_timeline():
       TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
       payload={}
       r=requests.get("https://api.twitter.com/1.1/statuses/user_timeline.json")
-      return template('tweet')  
+      if r.status_code =200:
+          doc=r.json()
+          return doc  
     else:
       redirect('/twitter')
     
