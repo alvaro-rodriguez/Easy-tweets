@@ -99,7 +99,7 @@ def tweet_submit():
     return "<p>Tweet properly sent</p>"
   else:
     return "<p>Unable to send tweet</p>"+r.content
-
+"""
 @route('/timeline')
 def tweet_timeline():
   if request.get_cookie("access_token", secret='some-secret-key'):
@@ -110,7 +110,8 @@ def tweet_timeline():
       if r.status_code =200:
           doc=r.json()
           return doc  
-   
+""" 
+)   
 @get('/twitter_logout')
 def twitter_logout():
   response.set_cookie("access_token", '',max_age=0)
