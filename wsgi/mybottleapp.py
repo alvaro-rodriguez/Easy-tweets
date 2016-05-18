@@ -99,29 +99,15 @@ def tweet_submit():
     return "<p>Tweet properly sent</p>"
   else:
     return "<p>Unable to send tweet</p>"+r.content
-"""
-@route('/timeline')
-def tweet_timeline():
-  if request.get_cookie("access_token", secret='some-secret-key'):
-      TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
-      TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
-      payload={}
-      r=requests.get("https://api.twitter.com/1.1/statuses/user_timeline.json")
-      if r.status_code =200:
-          doc=r.json()
-          return doc  
-""" 
-)   
+
 @get('/twitter_logout')
 def twitter_logout():
   response.set_cookie("access_token", '',max_age=0)
   response.set_cookie("access_token_secret", '',max_age=0)
   redirect('/twitter')
 
-
 import os
 from bottle import TEMPLATE_PATH
 TEMPLATE_PATH.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'],'wsgi/views/'))
 
 application=default_app()
-
