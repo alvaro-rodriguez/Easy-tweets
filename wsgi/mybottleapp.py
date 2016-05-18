@@ -100,11 +100,35 @@ def tweet_submit():
   else:
     return "<p>Unable to send tweet</p>"+r.content
 
+@get('/timeline')
+def tweet_timeline():
+  TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
+  TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
+  print CONSUMER_KEY
+  print CONSUMER_SECRET
+  print TOKENS["access_token"]
+  print TOKENS["access_token_secret"]
+  oauth = OAuth1(CONSUMER_KEY,
+                   client_secret=CONSUMER_SECRET,
+                   resource_owner_key=TOKENS["access_token"],
+                   resource_owner_secret=TOKENS["access_token_secret"])
+  url = 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=twitterapi&count=2'
+  r = requests.post(url=url,
+                      data={"status":texto},
+                      auth=oauth)
+  if r.status_code == 200:
+    return "<p>Tweet properly sent</p>"
+  else:
+    return "<p>Unable to send tweet</p>"+r.content
+   
+
+    
 @get('/twitter_logout')
 def twitter_logout():
   response.set_cookie("access_token", '',max_age=0)
   response.set_cookie("access_token_secret", '',max_age=0)
   redirect('/twitter')
+
 
 import os
 from bottle import TEMPLATE_PATH

@@ -55,8 +55,8 @@
                       <li class="current">
                           <a href="#">tweets</a>
                           <ul>
-                              <li><a href="/twiter">Publicar un tweet</a></li>
-                              <li><a href="#">Ver tweets</a></li>
+                              <li><a href="/twittear">Publicar un tweet</a></li>
+                              <li><a href="/timeline">Ver tweets</a></li>
                                                           
                           </ul>
                       </li>
