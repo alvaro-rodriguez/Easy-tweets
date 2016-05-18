@@ -1,16 +1,6 @@
-%include('header.tpl')
-            
-
-
-
-
-
-
-
-
-
-            <p><a href="#" class="buttonlink">CALL TO ACTION</a> <a href="#" class="buttonlink">ONE MORE</a></p>
-        </div>
+% include('header.tpl')
+<p><a href="#" class="buttonlink">CALL TO ACTION</a> <a href="#" class="buttonlink">ONE MORE</a></p>
+           </div>
         <div class="grid_7 rightfloat">
               <div class="flexslider">
                   <ul class="slides">
@@ -61,4 +51,4 @@
             
   </div><!-- #end div #main .wrapper -->
 
-%inlcude('footer.tpl')
+% inlcude('footer.tpl')
