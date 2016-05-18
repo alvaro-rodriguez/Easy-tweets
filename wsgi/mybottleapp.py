@@ -110,8 +110,6 @@ def tweet_timeline():
       if r.status_code =200:
           doc=r.json()
           return doc  
-    else:
-      redirect('/twitter')
     
 @get('/twitter_logout')
 def twitter_logout():
