@@ -51,4 +51,4 @@
             
   </div><!-- #end div #main .wrapper -->
 
-% inlcude('footer.tpl')
+% include('footer.tpl')
