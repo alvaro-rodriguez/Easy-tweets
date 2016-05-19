@@ -91,7 +91,7 @@ def tweet_submit():
                    client_secret=CONSUMER_SECRET,
                    resource_owner_key=TOKENS["access_token"],
                    resource_owner_secret=TOKENS["access_token_secret"])
- 
+""" 
 @route('/timeline')
 def timeline():
 #params={}
@@ -102,7 +102,7 @@ def timeline():
     return template('timeline.tpl',dic=doc)
   else:
     redirect('/twittear')
-
+"""
 @get('/twitter_logout')
 def twitter_logout():
   response.set_cookie("access_token", '',max_age=0)
