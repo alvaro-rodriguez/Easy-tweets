@@ -48,7 +48,8 @@
         <nav id="topnav" role="navigation">
           <div class="menu-toggle">Menu</div>  
           <ul class="srt-menu" id="menu-main-navigation">
-              <li class="current"><a href="/twitter">identificarse</a></li>
+
+              <li class="current"><href="{{authorize_url}}">Autenticarse></li>
              
               <li><a href="#">Acciones</a>
                   <ul>
