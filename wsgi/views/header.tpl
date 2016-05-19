@@ -48,7 +48,7 @@
         <nav id="topnav" role="navigation">
           <div class="menu-toggle">Menu</div>  
           <ul class="srt-menu" id="menu-main-navigation">
-              <li class="current"><a href="basic.html">Home page</a></li>
+              <li class="current"><a href="/twitter">identificarse</a></li>
              
               <li><a href="#">Acciones</a>
                   <ul>
