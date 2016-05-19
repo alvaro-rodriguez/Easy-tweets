@@ -94,8 +94,8 @@ def tweet_submit():
  
 @route('/timeline')
 def timeline():
-params={}
-r = requests.get('https://api.twitter.com/1.1/statuses/user_timeline.json',params}
+#params={}
+#r = requests.get('https://api.twitter.com/1.1/statuses/user_timeline.json',params}
 
   if r.status_code == 200:
     doc=r.json()
