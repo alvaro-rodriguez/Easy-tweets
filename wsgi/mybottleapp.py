@@ -132,8 +132,11 @@ def tweet_submit():
     return "<p>Tweet properly sent</p>"
   else:
     return "<p>Unable to send tweet</p>"+r.content
+#-----------------------------------------------------------------------------------------
+#historial de mensajes
 
 #-----------------------------------------------------------------------------------------
+#timeline del usuario
 @get('/timeline')
 def timeline():
     url='https://api.twitter.com/1.1/statuses/user_timeline.json'
