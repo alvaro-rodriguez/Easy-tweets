@@ -57,8 +57,6 @@ def twitter():
     return template('oauth1.tpl', authorize_url=authorize_url)
 
 @get('/callback')
-      /callback
-
 def get_verifier():
   TOKENS["request_token"]=request.get_cookie("request_token", secret='some-secret-key')
   TOKENS["request_token_secret"]=request.get_cookie("request_token_secret", secret='some-secret-key')
