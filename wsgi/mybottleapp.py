@@ -44,10 +44,6 @@ def get_access_token(TOKENS):
   TOKENS["access_token"] = credentials.get('oauth_token')[0]
   TOKENS["access_token_secret"] = credentials.get('oauth_token_secret')[0]
 
-@get('/')
-def index():
-  return template('oauth1.tpl')
-
 @route('/menu')
 def menu():
     return template('/index.tpl')

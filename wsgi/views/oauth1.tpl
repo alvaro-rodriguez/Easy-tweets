@@ -2,6 +2,6 @@
     <title>prueba</title>
   </head>
   <body>
-    <a href={{authorize_url}}>Comenzar</a>
+    <a href="{{authorize_url}}">Comenzar</a>
   </body>
 </html>
