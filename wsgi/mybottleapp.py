@@ -65,8 +65,8 @@ def get_verifier():
 
 @get('/menu')
 def menu():
-    return template('index.tpl')
-
+#    return template('index.tpl')
+return template('oauth2.tpl')
 @get('/twittear')
 def twittear():
     if request.get_cookie("access_token", secret='some-secret-key'):
