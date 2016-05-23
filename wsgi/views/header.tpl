@@ -49,7 +49,7 @@
           <div class="menu-toggle">Menu</div>  
           <ul class="srt-menu" id="menu-main-navigation">
 
-	<li class="current"><href="{{authorize_url}}">Autenticarse></li>
+
 
              
               <li><a href="#">Acciones</a>
