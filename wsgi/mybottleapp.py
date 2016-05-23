@@ -67,7 +67,7 @@ def get_verifier():
   redirect('/twittear')
 
 
-@get('/twittear')
+"""@get('/twittear')
 def twittear():
     if request.get_cookie("access_token", secret='some-secret-key'):
       TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
@@ -75,11 +75,11 @@ def twittear():
       return template('twittear.tpl')  
     else:
       redirect('/')
-
+"""
 
 @post('/twittear')
 def tweet_submit():
-  texto = request.forms.get('twitear.tpl')
+  texto = request.forms.get('twittear.tpl')
   TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
   TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
   print CONSUMER_KEY
