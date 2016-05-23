@@ -47,7 +47,7 @@ def get_access_token(TOKENS):
 @route('/menu')
 def menu():
     return template('/index.tpl')
-@get('/twitter')
+@get('/')
 def twitter():
     get_request_token()
     authorize_url = AUTHENTICATE_URL + TOKENS["request_token"]
@@ -74,7 +74,7 @@ def twittear():
       TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
       return template('tweet')  
     else:
-      redirect('/twitter')
+      redirect('/menu')
 
 
 @post('/twittear')
@@ -103,7 +103,7 @@ def tweet_submit():
 def twitter_logout():
   response.set_cookie("access_token", '',max_age=0)
   response.set_cookie("access_token_secret", '',max_age=0)
-  redirect('/twitter')
+  redirect('/')
 
 
 
