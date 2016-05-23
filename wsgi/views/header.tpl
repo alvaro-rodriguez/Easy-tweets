@@ -50,7 +50,7 @@
           <ul class="srt-menu" id="menu-main-navigation">
 
 	<li class="current"><href="{{authorize_url}}">Autenticarse></li>
-              <li class="current"><a href=""{{authorize_url}}">identificarse</a></li>
+
              
               <li><a href="#">Acciones</a>
                   <ul>
