@@ -63,7 +63,7 @@ def get_verifier():
   response.set_cookie("access_token_secret", TOKENS["access_token_secret"],secret='some-secret-key')
   redirect('/menu')
 
- @route('/menu')
+@route('/menu')
 def menu():
     return template('index.tpl')
 
@@ -72,7 +72,7 @@ def twittear():
     if request.get_cookie("access_token", secret='some-secret-key'):
       TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
       TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
-      return template('twittear')  
+      return template('twittear.tpl')  
     else:
       redirect('/menu')
 
