@@ -66,7 +66,8 @@ def get_verifier():
 @get('/menu')
 def menu():
     return template('menu.tpl')
-
+#-----------------------------------------------------------------------------------------
+#publicar un tweet
 @get('/twittear')
 def twittear():
     if request.get_cookie("access_token", secret='some-secret-key'):
@@ -98,7 +99,41 @@ def tweet_submit():
     return "<p>Tweet properly sent</p>"
   else:
     return "<p>Unable to send tweet</p>"+r.content
+#-----------------------------------------------------------------------------------------
+#mensajes directos
+@get('/mensaje')
+def twittear():
+    if request.get_cookie("access_token", secret='some-secret-key'):
+      TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
+      TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
+      return template('mensaje.tpl')  
+    else:
+      redirect('/menu')
 
+
+@post('/mensaje')
+def tweet_submit():
+  texto = request.forms.get("tweet")
+  TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
+  TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
+  print CONSUMER_KEY
+  print CONSUMER_SECRET
+  print TOKENS["access_token"]
+  print TOKENS["access_token_secret"]
+  oauth = OAuth1(CONSUMER_KEY,
+                   client_secret=CONSUMER_SECRET,
+                   resource_owner_key=TOKENS["access_token"],
+                   resource_owner_secret=TOKENS["access_token_secret"])
+  url = 'https://api.twitter.com/1.1/statuses/update.json'
+  r = requests.post(url=url,
+                      data={"status":texto},
+                      auth=oauth)
+  if r.status_code == 200:
+    return "<p>Tweet properly sent</p>"
+  else:
+    return "<p>Unable to send tweet</p>"+r.content
+
+#-----------------------------------------------------------------------------------------
 @get('/timeline')
 def timeline():
     url='https://api.twitter.com/1.1/statuses/user_timeline.json'

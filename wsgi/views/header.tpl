@@ -66,8 +66,8 @@
                           <a href="#">Mensajes directos</a>
                           <ul>
                               
-                              <li><a href="#">Mensajería directa</a></li>
-                              <li><a href="#">Historial de mensajes</a></li>
+                              <li><a href="/mensaje">Mensajería directa</a></li>
+                              <li><a href="/mensajes">Historial de mensajes</a></li>
                           </ul>
                       </li>
 		       <li class="current">
@@ -78,7 +78,8 @@
                               
                           </ul>
                       </li>
-		      
+		      <li> <a href="/twitter_logout">Salir</a>
+		      </li>
                       
                   </ul>
               </li>
