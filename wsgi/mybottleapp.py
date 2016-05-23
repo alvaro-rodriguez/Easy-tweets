@@ -99,6 +99,16 @@ def tweet_submit():
   else:
     return "<p>Unable to send tweet</p>"+r.content
 
+@get('/timeline')
+def timeline():
+    url='https://api.twitter.com/1.1/statuses/user_timeline.json'
+    r= requests.get(url)
+    if r.status_code == 200:
+        doc=r.json()
+        return template ('timeline.tpl',dic=doc)
+    else:
+        redirect('/')
+        
 @get('/twitter_logout')
 def twitter_logout():
   response.set_cookie("access_token", '',max_age=0)
