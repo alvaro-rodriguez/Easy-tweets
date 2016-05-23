@@ -1,13 +1,6 @@
 
 <!-- footer area -->
- <pre>
-      def twitter_logout():
-        response.set_cookie("access_token", '',max_age=0)
-        response.set_cookie("access_token_secret", '',max_age=0)
-        redirect('/twitter')
-    </pre>
-  	</ul>
-    <a href="{{authorize_url}}">Comenzar a twitterar</a>
+
 <footer>
 	<div id="colophon" class="wrapper clearfix">
     	footer stuff
