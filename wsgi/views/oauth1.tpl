@@ -2,7 +2,6 @@
     <title>prueba</title>
   </head>
   <body>
-
-    <a href="{{authorize_url}}">Comenzar a twitterar</a>
+    <a href={{authorize_url}}>Comenzar</a>
   </body>
 </html>
