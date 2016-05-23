@@ -44,9 +44,6 @@ def get_access_token(TOKENS):
   TOKENS["access_token"] = credentials.get('oauth_token')[0]
   TOKENS["access_token_secret"] = credentials.get('oauth_token_secret')[0]
 
-@route('/menu')
-def menu():
-    return template('index.tpl')
 
 @get('/')
 def twitter():
@@ -66,6 +63,9 @@ def get_verifier():
   response.set_cookie("access_token_secret", TOKENS["access_token_secret"],secret='some-secret-key')
   redirect('/menu')
 
+ @route('/menu')
+def menu():
+    return template('index.tpl')
 
 @get('/twittear')
 def twittear():
