@@ -43,13 +43,13 @@ def get_access_token(TOKENS):
   credentials = parse_qs(r.content)
   TOKENS["access_token"] = credentials.get('oauth_token')[0]
   TOKENS["access_token_secret"] = credentials.get('oauth_token_secret')[0]
-"""
+
 @get('/')
 def index():
-  return template('index.tpl')
-"""
-@get('/')
-def twitter():
+  return template('portada.tpl')
+
+@get('/login')
+def login():
     get_request_token()
     authorize_url = AUTHENTICATE_URL + TOKENS["request_token"]
     response.set_cookie("request_token", TOKENS["request_token"],secret='some-secret-key')
