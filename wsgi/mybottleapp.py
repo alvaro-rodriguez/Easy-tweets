@@ -12,8 +12,8 @@ AUTHENTICATE_URL = "https://api.twitter.com/oauth/authenticate?oauth_token="
 ACCESS_TOKEN_URL = "https://api.twitter.com/oauth/access_token"
 
 
-CONSUMER_KEY = "jWdjfLA3SbvWNPnE7G8LyoEAI"
-CONSUMER_SECRET = "zOuclYiBmfKDztZaKtd77KL0hPf2DbvaQfbYDNNn83P6d3ldue"
+CONSUMER_KEY = "RV5QS2itE2SIeKhhiFU7XPChm"
+CONSUMER_SECRET = "uUIGAC7OkEw14laGP0Wv10lBEiVmo1fdFMKzFJDBBc5JCyeEXB"
 
 TOKENS = {}
 
@@ -57,6 +57,7 @@ def twitter():
     return template('oauth1.tpl', authorize_url=authorize_url)
 
 @get('/callback')
+      /callback
 
 def get_verifier():
   TOKENS["request_token"]=request.get_cookie("request_token", secret='some-secret-key')
