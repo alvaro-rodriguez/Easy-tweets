@@ -63,7 +63,7 @@ def get_verifier():
   response.set_cookie("access_token_secret", TOKENS["access_token_secret"],secret='some-secret-key')
   redirect('/menu')
 
-@route('/menu')
+@get('/menu')
 def menu():
     return template('index.tpl')
 
