@@ -65,7 +65,7 @@ def get_verifier():
 
 @get('/menu')
 def menu():
-    return template('menu')
+    return template('menu.tpl')
 
 @get('/twittear')
 def twittear():
