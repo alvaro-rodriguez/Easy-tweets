@@ -20,7 +20,6 @@ TOKENS = {}
 ###oauth1
 
 
-
 def get_request_token():
     oauth = OAuth1(CONSUMER_KEY,
                    client_secret=CONSUMER_SECRET,
@@ -44,19 +43,24 @@ def get_access_token(TOKENS):
   TOKENS["access_token"] = credentials.get('oauth_token')[0]
   TOKENS["access_token_secret"] = credentials.get('oauth_token_secret')[0]
 
+
+
+
+
 @get('/')
 def index():
   return template('portada.tpl')
 
 @get('/login')
 def login():
-    get_request_token()
+   get_request_token()
     authorize_url = AUTHENTICATE_URL + TOKENS["request_token"]
     response.set_cookie("request_token", TOKENS["request_token"],secret='some-secret-key')
     response.set_cookie("request_token_secret", TOKENS["request_token_secret"],secret='some-secret-key')
     return template('index.tpl', authorize_url=authorize_url)
 
 @get('/callback')
+
 def get_verifier():
   TOKENS["request_token"]=request.get_cookie("request_token", secret='some-secret-key')
   TOKENS["request_token_secret"]=request.get_cookie("request_token_secret", secret='some-secret-key')
@@ -64,7 +68,8 @@ def get_verifier():
   get_access_token(TOKENS)
   response.set_cookie("access_token", TOKENS["access_token"],secret='some-secret-key')
   response.set_cookie("access_token_secret", TOKENS["access_token_secret"],secret='some-secret-key')
-  redirect('/twittear')
+  redirect('/login')
+
 
 
 """@get('/twittear')
@@ -100,7 +105,7 @@ def tweet_submit():
     return "<p>Unable to send tweet</p>"+r.content
 
 
-""" 
+
 @route('/timeline')
 def timeline():
 #params={}
@@ -111,7 +116,7 @@ def timeline():
     return template('timeline.tpl',dic=doc)
   else:
     redirect('/twittear')
-"""
+
 @get('/twitter_logout')
 def twitter_logout():
   response.set_cookie("access_token", '',max_age=0)
