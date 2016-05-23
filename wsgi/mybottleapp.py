@@ -80,7 +80,7 @@ def twittear():
 
 @post('/twittear')
 def tweet_submit():
-  texto = request.forms.get("tweet")
+  texto = request.forms.get("twittear.tpl")
   TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
   TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
   print CONSUMER_KEY
@@ -113,7 +113,7 @@ def twittear():
 
 @post('/mensaje')
 def tweet_submit():
-  texto = request.forms.get("tweet")
+  texto = request.forms.get("mensaje.tpl")
   TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
   TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
   print CONSUMER_KEY
