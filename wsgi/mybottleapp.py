@@ -167,7 +167,12 @@ def twitter_logout():
   response.set_cookie("access_token_secret", '',max_age=0)
   redirect('/')
 
-
+@get('/estadisticas')
+def estadisticas():
+   return template('estadisticas.tpl') 
+@get('/seguidores')
+def seguidores():
+    return template('seguidores.tpl')
 
 
 # This must be added in order to do correct path lookups for the views
