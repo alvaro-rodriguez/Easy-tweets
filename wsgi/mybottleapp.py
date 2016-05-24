@@ -157,7 +157,7 @@ def timeline():
                       auth=oauth)
     if r.status_code == 200:
         doc=r.json()
-        return template ('timeline.tpl',dic=doc)
+         return "<p>Time line</p>"
     else:
         redirect('/')
         
