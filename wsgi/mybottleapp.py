@@ -160,19 +160,90 @@ def timeline():
         return "<p>Time line</p>"
     else:
         return "<p>No time line</p>"
-        
+#---------------------------------------------------------------------------------
+#Estadisticas
+
+@get('/estadisticas')
+def estadisticas():
+   return template('estadisticas.tpl') 
+
+@get('/seguidores')
+def seguidores():
+    TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
+    TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
+    print CONSUMER_KEY
+    print CONSUMER_SECRET
+    print TOKENS["access_token"]
+    print TOKENS["access_token_secret"]
+    oauth = OAuth1(CONSUMER_KEY,
+                   client_secret=CONSUMER_SECRET,
+                   resource_owner_key=TOKENS["access_token"],
+                   resource_owner_secret=TOKENS["access_token_secret"])
+    url='https://api.twitter.com/1.1/statuses/user_timeline.json'
+    r = requests.post(url=url,
+                      data={"screen_name":'gatoapacheboina','count':'2'},
+                      auth=oauth)
+    if r.status_code == 200:
+        doc=r.json()
+        return template('seguidores.tpl')
+    else:
+        return "<p>No seguidores</p>"
+
+
+@get('/menciones')
+def seguidores():
+    return template('menciones.tpl')
+    TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
+    TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
+    print CONSUMER_KEY
+    print CONSUMER_SECRET
+    print TOKENS["access_token"]
+    print TOKENS["access_token_secret"]
+    oauth = OAuth1(CONSUMER_KEY,
+                   client_secret=CONSUMER_SECRET,
+                   resource_owner_key=TOKENS["access_token"],
+                   resource_owner_secret=TOKENS["access_token_secret"])
+    url='https://api.twitter.com/1.1/statuses/mentions_timeline.json'
+    r = requests.post(url=url,
+                      data={'count':'2'},
+                      auth=oauth)
+    if r.status_code == 200:
+        doc=r.json()
+        return template('seguidores.tpl')
+    else:
+        return "<p>No menciones</p>"
+
+@get('/Retweets')
+def seguidores():
+    return template('retweets.tpl')
+    TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
+    TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
+    print CONSUMER_KEY
+    print CONSUMER_SECRET
+    print TOKENS["access_token"]
+    print TOKENS["access_token_secret"]
+    oauth = OAuth1(CONSUMER_KEY,
+                   client_secret=CONSUMER_SECRET,
+                   resource_owner_key=TOKENS["access_token"],
+                   resource_owner_secret=TOKENS["access_token_secret"])
+    url='https://api.twitter.com/1.1/statuses/user_timeline.json'
+    r = requests.post(url=url,
+                      data={"screen_name":'gatoapacheboina','count':'2'},
+                      auth=oauth)
+    if r.status_code == 200:
+        doc=r.json()
+        return template('seguidores.tpl')
+    else:
+        return "<p>No retweets</p>"
+
+#---------------------------------------------------------------------------------
+#Deconectar
 @get('/twitter_logout')
 def twitter_logout():
   response.set_cookie("access_token", '',max_age=0)
   response.set_cookie("access_token_secret", '',max_age=0)
   redirect('/')
 
-@get('/estadisticas')
-def estadisticas():
-   return template('estadisticas.tpl') 
-@get('/seguidores')
-def seguidores():
-    return template('seguidores.tpl')
 
 
 # This must be added in order to do correct path lookups for the views
