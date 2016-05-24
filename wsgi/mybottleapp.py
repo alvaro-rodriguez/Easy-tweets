@@ -80,7 +80,7 @@ def twittear():
 
 @post('/twittear')
 def tweet_submit():
-  texto = request.forms.get("twittear.tpl")
+  texto = request.forms.get("twittear")
   TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
   TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
   print CONSUMER_KEY
@@ -114,25 +114,26 @@ def twittear():
 
 @post('/mensaje')
 def tweet_submit():
-  texto = request.forms.get("mensaje.tpl")
-  TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
-  TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
-  print CONSUMER_KEY
-  print CONSUMER_SECRET
-  print TOKENS["access_token"]
-  print TOKENS["access_token_secret"]
-  oauth = OAuth1(CONSUMER_KEY,
+    destino=request.forms.get('destino')
+    texto = request.forms.get('mensaje')
+    TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
+    TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
+    print CONSUMER_KEY
+    print CONSUMER_SECRET
+    print TOKENS["access_token"]
+    print TOKENS["access_token_secret"]
+    oauth = OAuth1(CONSUMER_KEY,
                    client_secret=CONSUMER_SECRET,
                    resource_owner_key=TOKENS["access_token"],
                    resource_owner_secret=TOKENS["access_token_secret"])
-  url = 'https://api.twitter.com/1.1/statuses/update.json'
-  r = requests.post(url=url,
-                      data={"status":texto},
+    url = 'https://api.twitter.com/1.1/statuses/update.json'
+    r = requests.post(url=url,
+                      data={"text":texto,"screen_name":destino},
                       auth=oauth)
-  if r.status_code == 200:
-    return "<p>Tweet properly sent</p>"
-  else:
-    return "<p>Unable to send tweet</p>"+r.content
+    if r.status_code == 200:
+        return "<p>Tweet properly sent</p>"
+    else:
+        return "<p>Unable to send tweet</p>"+r.content
 #-----------------------------------------------------------------------------------------
 #historial de mensajes
 
