@@ -74,8 +74,9 @@
                           <a href="#">Estadísticas</a>
                           <ul>
                               
-                              <li><a href="#">Seguidores</a></li>
-                              
+                              <li><a href="/seguidores">Seguidores</a></li>
+                              <li><a href="/menciones">menciones</a></li>
+			      <li><a href="#">Retweets</a></li>
                           </ul>
                       </li>
 		      <li> <a href="/twitter_logout">Salir</a>

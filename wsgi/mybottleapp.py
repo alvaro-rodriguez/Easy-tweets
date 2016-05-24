@@ -209,7 +209,7 @@ def seguidores():
                       auth=oauth)
     if r.status_code == 200:
         doc=r.json()
-        return template('seguidores.tpl')
+        return template('seguidores.tpl',dir=doc)
     else:
         return "<p>No menciones</p>"
 
