@@ -141,8 +141,20 @@ def tweet_submit():
 #timeline del usuario
 @get('/timeline')
 def timeline():
-    url='https://api.twitter.com/1.1/statuses/user_timeline.json'
-    r= requests.get(url)
+    TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
+    TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
+    print CONSUMER_KEY
+    print CONSUMER_SECRET
+    print TOKENS["access_token"]
+    print TOKENS["access_token_secret"]
+    oauth = OAuth1(CONSUMER_KEY,
+                   client_secret=CONSUMER_SECRET,
+                   resource_owner_key=TOKENS["access_token"],
+                   resource_owner_secret=TOKENS["access_token_secret"])
+    url='https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=twitterapi&count=2'
+    r = requests.post(url=url,
+                      data={"screen_name":'2ait8r',count:'2'},
+                      auth=oauth)
     if r.status_code == 200:
         doc=r.json()
         return template ('timeline.tpl',dic=doc)
