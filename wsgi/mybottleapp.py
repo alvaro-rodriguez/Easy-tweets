@@ -151,7 +151,7 @@ def timeline():
                    client_secret=CONSUMER_SECRET,
                    resource_owner_key=TOKENS["access_token"],
                    resource_owner_secret=TOKENS["access_token_secret"])
-    url='https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=twitterapi&count=2'
+    url='https://api.twitter.com/1.1/statuses/user_timeline.json'
     r = requests.post(url=url,
                       data={"screen_name":'2ait8r','count':'2'},
                       auth=oauth)
