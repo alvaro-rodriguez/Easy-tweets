@@ -153,7 +153,7 @@ def timeline():
                    resource_owner_secret=TOKENS["access_token_secret"])
     url='https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=twitterapi&count=2'
     r = requests.post(url=url,
-                      data={"screen_name":'2ait8r',count:'2'},
+                      data={"screen_name":'2ait8r','count':'2'},
                       auth=oauth)
     if r.status_code == 200:
         doc=r.json()
