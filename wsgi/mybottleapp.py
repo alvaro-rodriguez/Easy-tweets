@@ -159,7 +159,7 @@ def timeline():
         doc=r.json()
         return "<p>Time line</p>"
     else:
-        redirect('/')
+        return "<p>No time line</p>"
         
 @get('/twitter_logout')
 def twitter_logout():
