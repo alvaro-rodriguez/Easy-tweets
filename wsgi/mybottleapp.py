@@ -126,7 +126,7 @@ def tweet_submit():
                    client_secret=CONSUMER_SECRET,
                    resource_owner_key=TOKENS["access_token"],
                    resource_owner_secret=TOKENS["access_token_secret"])
-    url = 'https://api.twitter.com/1.1/statuses/update.json'
+    url = 'https://api.twitter.com/1.1/direct_messages/new.json'
     r = requests.post(url=url,
                       data={"text":texto,"screen_name":destino},
                       auth=oauth)
