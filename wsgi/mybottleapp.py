@@ -96,7 +96,8 @@ def tweet_submit():
                       data={"status":texto},
                       auth=oauth)
   if r.status_code == 200:
-    return "<p>Tweet properly sent</p>"
+     redirect('/menu')
+#    return "<p>Tweet properly sent</p>"
   else:
     return "<p>Unable to send tweet</p>"+r.content
 #-----------------------------------------------------------------------------------------
