@@ -192,7 +192,6 @@ def seguidores():
 
 @get('/menciones')
 def seguidores():
-    return template('menciones.tpl')
     TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
     TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
     print CONSUMER_KEY
@@ -209,13 +208,12 @@ def seguidores():
                       auth=oauth)
     if r.status_code == 200:
         doc=r.json()
-        return template('seguidores.tpl',doc=doc)
+        return template('menciones.tpl',doc=doc)
     else:
         return "<p>No menciones</p>"
 
 @get('/Retweets')
 def seguidores():
-    return template('retweets.tpl')
     TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
     TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
     print CONSUMER_KEY
