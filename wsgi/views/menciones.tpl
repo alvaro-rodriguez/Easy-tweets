@@ -4,11 +4,11 @@
       <textarea name="numero" id="textbox" rows="3" cols="5"></textarea>
  </form>
 
-      %for d in doc:
-      	   <p>{{d[0]['text']}}>
+
+      	   <p>{{doc}}</p>
 	
-	   %end
-      %end
+
+
 
 
 
