@@ -182,7 +182,7 @@ def seguidores():
                    resource_owner_secret=TOKENS["access_token_secret"])
     url='https://api.twitter.com/1.1/followers/list.json'
     r = requests.get(url=url,
-                     data={"cursor":"-1","screen_name":'gatoapacheboina','skip_status':'true','include_user_entities':'false'},
+                     data={'cursor':'-1','screen_name':'gatoapacheboina','skip_status':'true','include_user_entities':'false'},
                      auth=oauth)
     if r.status_code == 200:
         doc=r.json()
