@@ -192,8 +192,9 @@ def seguidores():
 
 #------------------------------------------------
 #menciones
+
 @get('/menciones')
-def seguidores():
+def menciones():
     TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
     TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
     print CONSUMER_KEY
