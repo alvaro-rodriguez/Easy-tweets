@@ -207,7 +207,7 @@ def menciones():
                    resource_owner_secret=TOKENS["access_token_secret"])
     url='https://api.twitter.com/1.1/statuses/mentions_timeline.json?count=9'
     r = requests.post(url=url,
-                      auth=oauth)
+                      headers=oauth)
     if r.status_code == 200:
         doc=r.json()
         return template('menciones.tpl',doc=doc)
