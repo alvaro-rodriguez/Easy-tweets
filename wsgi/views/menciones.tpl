@@ -5,7 +5,15 @@
  </form>
 
 
-      	   <p>{{doc}}</p>
+
+	   %for d in doc:
+	   	<p>"Mencionado por :" {{d['']}} </p>
+		<p>"Mencionados:"</p>
+		%for i in {{d['entities']['user']}}:
+		   {{i['name']}}
+		%end
+	   	<p>{{d['text']}}</p>
+	   %end
 	
 
 
