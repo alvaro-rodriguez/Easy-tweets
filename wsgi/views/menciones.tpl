@@ -5,7 +5,7 @@
  </form>
 
       %for d in doc:
-      	   <p>{{d['text']}}>
+      	   <p>{{d[0]['text']}}>
 	
 	   %end
       %end
