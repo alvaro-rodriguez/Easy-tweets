@@ -6,6 +6,6 @@
   <link rel="stylesheet" href="static/css/basic-style.css">
   </head>
   <body>
-    <a href="{{authorize_url}}" class="button">Comenzar</a>
+    <a href="{{authorize_url}}" class="buttonlink">Comenzar</a>
   </body>
 </html>
