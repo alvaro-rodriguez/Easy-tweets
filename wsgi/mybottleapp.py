@@ -295,6 +295,6 @@ def twitter_logout():
 # This must be added in order to do correct path lookups for the views
 import os
 from bottle import TEMPLATE_PATH
+os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 TEMPLATE_PATH.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi/views/')) 
-
 application=default_app()
