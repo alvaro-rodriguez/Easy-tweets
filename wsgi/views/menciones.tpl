@@ -9,7 +9,7 @@
         <div class="grid_5">
 	    </div>
 
-	   %for d in doc:
+	   %for d in {{doc}}:
 	   <div class="grid_7 rightfloat" width="240" height="290" >
               <div class="flexslider" width="240" height="290" >
 	      <ul class="slides" width="240" height="290" >

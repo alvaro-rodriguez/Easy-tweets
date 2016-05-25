@@ -2,7 +2,7 @@
 
  
 	%for d in {{doc['users']}}:
-	     {{d['name']}}  {{d['screen_name']}}  <img src={{d['profile_image_url']}}/>
+	     {{d['name']}} 
 	%end
 
 
