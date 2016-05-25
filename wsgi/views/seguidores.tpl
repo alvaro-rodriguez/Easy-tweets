@@ -1,7 +1,7 @@
 % include('estadisticas.tpl') 
 
  
-	%for d in {{doc['user']}}:
+	%for d in {{doc['users']}}:
 	     {{d['name']}}  {{d['screen_name']}}  <img src={{d['profile_image_url']}}/>
 	%end
 
