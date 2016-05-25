@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <title>Easy</title>
   <link rel="stylesheet" href="static/css/normalize.css">
