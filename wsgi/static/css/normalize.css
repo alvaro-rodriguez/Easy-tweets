@@ -449,6 +449,19 @@ input[type="submit"] {
     *overflow: visible;  /* 4 */
 }
 
+#Mi botón
+boton-centro {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.1em;
+    overflow: visible;
+    padding: 5px 10px;
+    position: relative;
+    text-align: center;
+    text-decoration: none !important;
+    border-radius: 4px 4px 4px 4px;
+} 
+
 /**
  * Re-set default cursor for disabled elements.
  */
