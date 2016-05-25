@@ -66,17 +66,17 @@
                           <a href="#">Mensajes directos</a>
                           <ul>
                               
-                              <li><a href="/mensaje">Mensajería directa</a></li>
+                              <li><a href="/mensaje">Enviar mensaje</a></li>
                               <li><a href="/mensajes">Historial de mensajes</a></li>
                           </ul>
                       </li>
 		       <li class="current">
-                          <a href="#">Estadísticas</a>
+                          <a href="/estadisticas">Estadísticas</a>
                           <ul>
                               
                               <li><a href="/seguidores">Seguidores</a></li>
                               <li><a href="/menciones">menciones</a></li>
-			      <li><a href="#">Retweets</a></li>
+			      <li><a href="/retweets">Retweets</a></li>
                           </ul>
                       </li>
 		      <li> <a href="/twitter_logout">Salir</a>
