@@ -7,7 +7,7 @@
 
 
 	   %for d in doc:
-	   	<p>"Mencionado por :" {{d['']}} </p>
+	   	<p>"Mencionado por :" {{d['']}} "En la fecha:" {{d['created_at']}}</p>
 		<p>"Mencionados:"</p>
 		%for i in {{d['entities']['user']}}:
 		   {{i['name']}}
