@@ -213,7 +213,7 @@ def seguidores():
     else:
         doc=r.json()
         return doc
-
+"""
 @post('/menciones')
 def tweet_submit():
     numero=request.forms.get('numero')
@@ -237,7 +237,8 @@ def tweet_submit():
     else:
         doc=r.json()
         return doc
-    #---------------------------------------------------
+"""
+#---------------------------------------------------
 #Retweets
 
 @get('/Retweets')
