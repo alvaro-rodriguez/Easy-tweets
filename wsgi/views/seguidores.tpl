@@ -1,10 +1,31 @@
 % include('estadisticas.tpl') 
-<p><a href="#" class="buttonlink">CALL TO ACTION</a> <a href="#" class="buttonlink">ONE MORE</a></p>
-           </div>
+
+ 
+<!-- hero area (the grey one with a slider -->
+    <section id="hero" class="clearfix">    
+    <!-- responsive FlexSlider image slideshow -->
+    <div class="wrapper">
+       <div class="row"> 
+        <div class="grid_5">
+	    </div>
+
+	   %for d in doc:
+	   <div class="grid_7 rightfloat" width="240" height="290" >
+              <div class="flexslider" width="240" height="290" >
+	      <ul class="slides" width="240" height="290" >
+	   	<p>"Mencionado por :" {{d['in_reply_to_screen_name']}} "En la fecha:" {{d['created_at']}}</p>
+	
+	   	<p>{{d['text']}}</p>
+		 </ul>
+                </div><!-- FlexSlider -->
+              </div><!-- end grid_7 -->
+	   %end
+
+         
         <div class="grid_7 rightfloat">
               <div class="flexslider">
                   <ul class="slides">
-
+       
                   </ul>
                 </div><!-- FlexSlider -->
               </div><!-- end grid_7 -->
@@ -16,24 +37,11 @@
 
 
 
+
 <!-- main content area -->   
 <div id="main" class="wrapper">
     
     
-<!-- content area -->    
-	<section id="content" class="wide-content">
-      <div class="row">	
-        <div class="grid_4">
-        	<h1 class="first-header">Introducción</h1>
-            <img src="images/basic-pic1.jpg" />
-            <p>[Aquí tengo que poner la intoducción]</p>
-        </div>
-     
 
-	  </div><!-- end row -->
-	</section><!-- end content area -->   
-      
-            
-  </div><!-- #end div #main .wrapper -->
 
 % include('footer.tpl')
