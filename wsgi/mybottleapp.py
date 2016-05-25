@@ -212,6 +212,7 @@ def seguidores():
         doc=r.json()
         return template('menciones.tpl',doc=doc)
     else:
+        doc=r.json()
         return template('menciones.tpl',doc=doc)
 
 @post('/menciones')
