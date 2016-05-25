@@ -231,7 +231,7 @@ def tweet_submit():
     r = requests.post(url=url,
                       data={"count":numero},
                       auth=oauth)
-    if r.status_code == 200:
+    if r.status_code != 200:
         return template('menciones.tpl',doc=doc)
     else:
         return template('menciones.tpl',doc=doc)
