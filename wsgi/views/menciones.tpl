@@ -5,10 +5,8 @@
  </form>
 
       %for d in doc:
-      	   <p>{{d['text']}} </p>
-	   <p>menciones:</p>
-	   %for m in {{d['user_mention']}}:
-	   	{{m['name']}}
+      	   <p>{{d['text']}}>
+	
 	   %end
       %end
 
