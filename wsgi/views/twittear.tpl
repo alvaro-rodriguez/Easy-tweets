@@ -1,6 +1,6 @@
 % include('header.tpl')
    <body>
-    <p>Buen momento para un tweet:</p>
+    <p>tweet:</p>
     <br />
     <form action="twittear" method="post">
       <p><textarea name="twittear" id="textbox" rows="3" cols="50"></textarea></p>
