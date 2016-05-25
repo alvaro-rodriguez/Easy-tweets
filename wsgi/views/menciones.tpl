@@ -1,5 +1,8 @@
 % include('estadisticas.tpl') 
-<p><a href="#" class="buttonlink">CALL TO ACTION</a> <a href="#" class="buttonlink">ONE MORE</a></p>
+
+ <form action="menciones" method="post">
+      <textarea name="numero" id="textbox" rows="3" cols="5"></textarea>
+ </form>
 
       %for d in doc:
       	   <p>{{d['text']}} </p>

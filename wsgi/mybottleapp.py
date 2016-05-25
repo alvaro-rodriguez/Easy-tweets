@@ -166,7 +166,8 @@ def timeline():
 @get('/estadisticas')
 def estadisticas():
    return template('estadisticas.tpl') 
-
+#----------------------------------------------
+#Seguidores
 @get('/seguidores')
 def seguidores():
     TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
@@ -189,7 +190,8 @@ def seguidores():
     else:
         return "<p>No seguidores</p>"
 
-
+#------------------------------------------------
+#menciones
 @get('/menciones')
 def seguidores():
     TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
@@ -210,7 +212,31 @@ def seguidores():
         doc=r.json()
         return template('menciones.tpl',doc=doc)
     else:
-        return "<p>No menciones</p>"
+        return template('menciones.tpl',doc=doc)
+
+@post('/menciones')
+def tweet_submit():
+    numero=request.forms.get('numero')
+    TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
+    TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
+    print CONSUMER_KEY
+    print CONSUMER_SECRET
+    print TOKENS["access_token"]
+    print TOKENS["access_token_secret"]
+    oauth = OAuth1(CONSUMER_KEY,
+                   client_secret=CONSUMER_SECRET,
+                   resource_owner_key=TOKENS["access_token"],
+                   resource_owner_secret=TOKENS["access_token_secret"])
+    url='https://api.twitter.com/1.1/statuses/user_timeline.json'
+    r = requests.post(url=url,
+                      data={"count":numero},
+                      auth=oauth)
+    if r.status_code == 200:
+        return template('menciones.tpl',doc=doc)
+    else:
+        return template('menciones.tpl',doc=doc)
+    #---------------------------------------------------
+#Retweets
 
 @get('/Retweets')
 def seguidores():
@@ -234,6 +260,27 @@ def seguidores():
     else:
         return "<p>No retweets</p>"
 
+@post('/retweets')
+def tweet_submit():
+    numero=request.forms.get('numero')
+    TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
+    TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
+    print CONSUMER_KEY
+    print CONSUMER_SECRET
+    print TOKENS["access_token"]
+    print TOKENS["access_token_secret"]
+    oauth = OAuth1(CONSUMER_KEY,
+                   client_secret=CONSUMER_SECRET,
+                   resource_owner_key=TOKENS["access_token"],
+                   resource_owner_secret=TOKENS["access_token_secret"])
+    url='https://api.twitter.com/1.1/statuses/user_timeline.json'
+    r = requests.post(url=url,
+                      data={"count":texto},
+                      auth=oauth)
+    if r.status_code == 200:
+        return "<p>Tweet properly sent</p>"
+    else:
+        return "<p>Unable to send tweet</p>"+r.content
 #---------------------------------------------------------------------------------
 #Deconectar
 @get('/twitter_logout')
