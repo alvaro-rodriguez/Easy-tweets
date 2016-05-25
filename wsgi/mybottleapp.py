@@ -204,9 +204,9 @@ def seguidores():
                    client_secret=CONSUMER_SECRET,
                    resource_owner_key=TOKENS["access_token"],
                    resource_owner_secret=TOKENS["access_token_secret"])
-    url='https://api.twitter.com/1.1/statuses/mentions_timeline.json'
+    url='https://api.twitter.com/1.1/statuses/mentions_timeline.json?count=9&amp;since_id=14927799'
     r = requests.post(url=url,
-                      data={'count':'2'},
+#                      data={'count':9 &amp;'since_id':'14927799'},
                       auth=oauth)
     if r.status_code == 200:
         doc=r.json()
