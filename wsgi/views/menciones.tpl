@@ -7,7 +7,7 @@
 
 
 	   %for d in doc:
-	   	<p>"Mencionado por :" {{d['screen_name']}} "En la fecha:" {{d['created_at']}}</p>
+	   	<p>"Mencionado por :" {{d['in_reply_to_screen_name']}} "En la fecha:" {{d['created_at']}}</p>
 		<p>"Mencionados:"</p>
 		%for i in {{d['entities']['user']}}:
 		   {{i['name']}}
