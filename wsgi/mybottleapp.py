@@ -186,9 +186,9 @@ def seguidores():
                       auth=oauth)
     if r.status_code == 200:
         doc=r.json()
-        return template('seguidores.tpl')
+        return template('seguidores.tpl',doc=doc)
     else:
-        return "<p>No seguidores</p>"
+        return doc
 
 #------------------------------------------------
 #menciones
@@ -204,7 +204,7 @@ def seguidores():
                    client_secret=CONSUMER_SECRET,
                    resource_owner_key=TOKENS["access_token"],
                    resource_owner_secret=TOKENS["access_token_secret"])
-    url='https://api.twitter.com/1.1/statuses/mentions_timeline.json?count=9&amp;since_id=14927799'
+    url='https://api.twitter.com/1.1/statuses/mentions_timeline.json?count=9'
     r = requests.post(url=url,
                       auth=oauth)
     if r.status_code == 200:
@@ -212,7 +212,7 @@ def seguidores():
         return template('menciones.tpl',doc=doc)
     else:
         doc=r.json()
-        return template('menciones.tpl',doc=doc)
+        return doc
 
 @post('/menciones')
 def tweet_submit():
@@ -232,9 +232,11 @@ def tweet_submit():
                       data={"count":numero},
                       auth=oauth)
     if r.status_code != 200:
+        doc=r.json()
         return template('menciones.tpl',doc=doc)
     else:
-        return template('menciones.tpl',doc=doc)
+        doc=r.json()
+        return doc
     #---------------------------------------------------
 #Retweets
 
@@ -258,7 +260,8 @@ def seguidores():
         doc=r.json()
         return template('seguidores.tpl')
     else:
-        return "<p>No retweets</p>"
+        doc=r.json()
+        return doc
 
 @post('/retweets')
 def tweet_submit():
@@ -278,8 +281,10 @@ def tweet_submit():
                       data={"count":texto},
                       auth=oauth)
     if r.status_code == 200:
+        doc=r.json()
         return "<p>Tweet properly sent</p>"
     else:
+        doc=r.json()
         return "<p>Unable to send tweet</p>"+r.content
 #---------------------------------------------------------------------------------
 #Deconectar
