@@ -67,7 +67,7 @@
                           <ul>
                               
                               <li><a href="/mensaje">Enviar mensaje</a></li>
-                              <li><a href="/mensajes">Historial de mensajes</a></li>
+                              <li><a href="/mensajes">Mensajes recibidos</a></li>
                           </ul>
                       </li>
 		       <li class="current">
