@@ -10,7 +10,7 @@
 	    </div>
 
 	   %for d in doc:
-	   <div class="grid_7 rightfloat" width="100%"  >
+
               <div class="flexslider" width="100%" >
 	      <ul class="slides" width="100%" >
 	   	<p>"Mencionado por :" {{d['in_reply_to_screen_name']}} "En la fecha:" {{d['created_at']}}</p>
@@ -18,7 +18,7 @@
 	   	<p>{{d['text']}}</p>
 		 </ul>
                 </div><!-- FlexSlider -->
-              </div><!-- end grid_7 -->
+
 	   %end
 
          
