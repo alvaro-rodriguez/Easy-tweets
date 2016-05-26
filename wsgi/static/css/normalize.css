@@ -541,3 +541,12 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+/*
+ MIO
+ */
+
+contenedor {
+  width: 300px;
+  margin: 0 auto;
+}
