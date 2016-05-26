@@ -1,7 +1,6 @@
 % include('header.tpl')
    <body>
-   <div id="columnas">
-   <li>
+  <div class='aside'>
    %for d in doc['users']:
 	  <div class="flexslider" width="100%" >
 	     <ul class="slides" width="100%" >
@@ -11,9 +10,8 @@
 	     </ul>
 	  </div><!-- FlexSlider -->
 	%end
-   
-   </li>
-   <li>
+   </div>
+
     <p>Mensaje directo:</p>
     <br />
     <form action="/mensaje" method="post">
@@ -24,7 +22,6 @@
       <p><input type="submit" class="button" value="Enviar" /></p>
     </form>
     <a href="/menu">Cancelar</a>
-    </li>
-    </div>
+
   </body>
 % include('footer.tpl')
