@@ -259,10 +259,10 @@ def seguidores():
                    client_secret=CONSUMER_SECRET,
                    resource_owner_key=TOKENS["access_token"],
                    resource_owner_secret=TOKENS["access_token_secret"])
+    
     url='https://api.twitter.com/1.1/statuses/retweets_of_me.json?count=500&screen_name=gatoapacheboina&amp;since_id=259320959964680190&amp;max_id=259320959964680500'
-    r = requests.get(url=url,
-                      #data={'count':'2'},
-                      auth=oauth)
+    r = requests.get(url=url)
+		     #, auth=oauth)
     if r.status_code == 200:
         doc=r.json()
         return doc
@@ -271,6 +271,7 @@ def seguidores():
         doc=r.json()
         return doc
 
+"""
 @post('/retweets')
 def tweet_submit():
     numero=request.forms.get('numero')
@@ -294,6 +295,7 @@ def tweet_submit():
     else:
         doc=r.json()
         return "<p>Unable to send tweet</p>"+r.content
+"""
 #---------------------------------------------------------------------------------
 #Deconectar
 @get('/twitter_logout')
