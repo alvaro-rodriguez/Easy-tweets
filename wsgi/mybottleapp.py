@@ -186,8 +186,8 @@ def seguidores():
     r = requests.get(url=url,auth=oauth)
     if r.status_code == 200:
         doc=r.json()
-        return doc
-        #return  template('seguidores.tpl',doc=doc)
+        #return doc
+        return  template('seguidores.tpl',doc=doc)
     else:
         doc=r.json()
         return doc
