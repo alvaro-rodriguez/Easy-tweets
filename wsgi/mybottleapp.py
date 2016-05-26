@@ -182,8 +182,10 @@ def seguidores():
                    resource_owner_key=TOKENS["access_token"],
                    resource_owner_secret=TOKENS["access_token_secret"])
     url='https://api.twitter.com/1.1/followers/ids.json'
-    url="https://api.twitter.com/1.1/followers/list.json?cursor=-1&screen_name=gatoapacheboina&skip_status=true&include_user_entities=false"
-    r = requests.get(url=url,auth=oauth)
+    #url="https://api.twitter.com/1.1/followers/list.json?cursor=-1&screen_name=gatoapacheboina&skip_status=true&include_user_entities=false"
+    r = requests.get(url=url,
+		     data{'cursor':'-1','screen_name':'gatoapacheboina','skip_status':'true','include_user_entities','false'},
+		     auth=oauth)
     if r.status_code == 200:
         doc=r.json()
         #return doc
@@ -257,13 +259,14 @@ def seguidores():
                    client_secret=CONSUMER_SECRET,
                    resource_owner_key=TOKENS["access_token"],
                    resource_owner_secret=TOKENS["access_token_secret"])
-    url='https://api.twitter.com/1.1/statuses/user_timeline.json'
-    r = requests.post(url=url,
-                      data={"screen_name":'gatoapacheboina','count':'2'},
+    url='https://api.twitter.com/1.1/statuses/retweets_of_me.json'
+    r = requests.get(url=url,
+                      data={'count':'2'},
                       auth=oauth)
     if r.status_code == 200:
         doc=r.json()
-        return template('seguidores.tpl')
+        return doc
+        #return template('seguidores.tpl',doc=doc)
     else:
         doc=r.json()
         return doc
