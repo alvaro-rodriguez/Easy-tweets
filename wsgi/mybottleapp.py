@@ -131,7 +131,7 @@ def mensaje_submit():
                       data={"text":texto,"screen_name":destino},
                       auth=oauth)
     if r.status_code == 200:
-        return "<p>Tweet properly sent</p>"
+        return redirect('/menu')
     else:
         return "<p>Unable to send tweet</p>"+r.content
 #-----------------------------------------------------------------------------------------
@@ -153,8 +153,8 @@ def mensajes():
     r = requests.get(url=url,
                       #data={"screen_name":'gatoapacheboina','count':'2'},
                       auth=oauth)
-    
-    return r
+    doc=r 
+    return template('mensajes.tpl',doc=doc) 
 """if r.status_code == 200:
         doc=r.json()
         return doc
