@@ -43,7 +43,7 @@ def get_access_token(TOKENS):
   credentials = parse_qs(r.content)
   TOKENS["access_token"] = credentials.get('oauth_token')[0]
   TOKENS["access_token_secret"] = credentials.get('oauth_token_secret')[0]
-
+global username = ""
 
 @get('/')
 def twitter():
@@ -51,8 +51,18 @@ def twitter():
     authorize_url = AUTHENTICATE_URL + TOKENS["request_token"]
     response.set_cookie("request_token", TOKENS["request_token"],secret='some-secret-key')
     response.set_cookie("request_token_secret", TOKENS["request_token_secret"],secret='some-secret-key')
-    return template('oauth1.tpl', authorize_url=authorize_url)
+    return template('principal.tpl', authorize_url=authorize_url)
 
+@post('/')
+def logeo():
+  username=request.forms.get("nombre")
+  print username
+  print CONSUMER_KEY
+  print CONSUMER_SECRET
+  print TOKENS["access_token"]
+  print TOKENS["access_token_secret"]
+  
+  
 @get('/callback')
 def get_verifier():
   TOKENS["request_token"]=request.get_cookie("request_token", secret='some-secret-key')
@@ -155,7 +165,7 @@ def mensajes():
                       auth=oauth)
     doc=r 
     #return template('mensajes.tpl',doc=doc) 
-    return doc.json()
+    return {doc: []}
 """if r.status_code == 200:
         doc=r.json()
         return doc

@@ -6,6 +6,9 @@
   <link rel="stylesheet" href="static/css/basic-style.css">
   </head>
   <body>
-    <a href="{{authorize_url}}" class="buttonlink">Comenzar</a>
+  <form action="/" method="post">
+      <p>Nombre de usuario @<input name="nombre" id="texbox" rows="1" cols="50" type="text" /> </p>
+  </form>
+    <p><a href="{{authorize_url}}" class="buttonlink">Comenzar</a></p>
   </body>
 </html>
