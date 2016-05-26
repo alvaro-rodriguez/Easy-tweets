@@ -184,7 +184,7 @@ def seguidores():
     url='https://api.twitter.com/1.1/followers/ids.json'
     #url="https://api.twitter.com/1.1/followers/list.json?cursor=-1&screen_name=gatoapacheboina&skip_status=true&include_user_entities=false"
     r = requests.get(url=url,
-		     data{'cursor':'-1','screen_name':'gatoapacheboina','skip_status':'true'},
+		     data={'cursor':'-1','screen_name':'gatoapacheboina','skip_status':'true','include_user_entities':'false'},
 		     auth=oauth)
     if r.status_code == 200:
         doc=r.json()
