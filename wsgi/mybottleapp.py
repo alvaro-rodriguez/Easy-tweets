@@ -43,7 +43,6 @@ def get_access_token(TOKENS):
   credentials = parse_qs(r.content)
   TOKENS["access_token"] = credentials.get('oauth_token')[0]
   TOKENS["access_token_secret"] = credentials.get('oauth_token_secret')[0]
-global username = ""
 
 @get('/')
 def twitter():
@@ -55,7 +54,7 @@ def twitter():
 
 @post('/')
 def logeo():
-  username=request.forms.get("nombre")
+  global username=request.forms.get("nombre")
   print username
   print CONSUMER_KEY
   print CONSUMER_SECRET
