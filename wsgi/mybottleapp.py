@@ -136,8 +136,8 @@ def mensaje():
       r = requests.get(url=url,
 		      #data={'cursor':'-1','screen_name':'gatoapacheboina','skip_status':'true','include_user_entities':'false'},
 		      auth=oauth)
-        doc=r.json()
-        return template('mensaje.tpl',doc=doc)
+      doc=r.json()
+      return template('mensaje.tpl',doc=doc)
 
 @post('/mensaje')
 def mensaje_submit():
