@@ -1,6 +1,6 @@
 % include('header.tpl')
    <body>
-  <div class='aside'>
+  <div id='aside'>
    %for d in doc['users']:
 	     <p><a href=https://www.twitter.com/{{d['screen_name']}} >{{d['name']}} , @{{d['screen_name']}} </a> De {{d['location']}}</p>
 	     <p>{{d['description']}}
