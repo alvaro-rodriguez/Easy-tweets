@@ -546,7 +546,7 @@ table {
  MIO
  */
 
-contenedor {
-  width: 300px;
+#contenedor {
+  width:"70%" ;
   margin: 0 auto;
 }
