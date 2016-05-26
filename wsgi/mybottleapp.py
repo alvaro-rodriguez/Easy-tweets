@@ -103,7 +103,7 @@ def tweet_submit():
 #-----------------------------------------------------------------------------------------
 #mensajes directos
 @get('/mensaje')
-def twittear():
+def mensaje():
     if request.get_cookie("access_token", secret='some-secret-key'):
       TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
       TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
@@ -113,7 +113,7 @@ def twittear():
 
 
 @post('/mensaje')
-def tweet_submit():
+def mensaje_submit():
     destino=request.forms.get('destino')
     texto = request.forms.get('mensaje')
     TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
@@ -136,6 +136,30 @@ def tweet_submit():
         return "<p>Unable to send tweet</p>"+r.content
 #-----------------------------------------------------------------------------------------
 #historial de mensajes
+
+@get('/mensajes')
+def mensajes():
+    TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
+    TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
+    print CONSUMER_KEY
+    print CONSUMER_SECRET
+    print TOKENS["access_token"]
+    print TOKENS["access_token_secret"]
+    oauth = OAuth1(CONSUMER_KEY,
+                   client_secret=CONSUMER_SECRET,
+                   resource_owner_key=TOKENS["access_token"],
+                   resource_owner_secret=TOKENS["access_token_secret"])
+    url='https://api.twitter.com/1.1/direct_messages.json?count=90'
+    r = requests.get(url=url,
+                      #data={"screen_name":'gatoapacheboina','count':'2'},
+                      auth=oauth)
+    if r.status_code == 200:
+        doc=r.json()
+        return doc
+    else:
+	doc=r.json()
+        return doc
+
 
 #-----------------------------------------------------------------------------------------
 #timeline del usuario
