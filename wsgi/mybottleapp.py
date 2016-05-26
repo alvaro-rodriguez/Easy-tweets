@@ -155,7 +155,7 @@ def mensajes():
                       auth=oauth)
     doc=r 
     #return template('mensajes.tpl',doc=doc) 
-    return doc['0']
+    return doc.json()
 """if r.status_code == 200:
         doc=r.json()
         return doc
