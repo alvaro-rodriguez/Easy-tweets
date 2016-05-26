@@ -188,8 +188,8 @@ def seguidores():
 		     auth=oauth)
     if r.status_code == 200:
         doc=r.json()
-        #return doc
-        return  template('seguidores.tpl',doc=doc)
+        return doc
+        #return  template('seguidores.tpl',doc=doc)
     else:
         doc=r.json()
         return doc
@@ -247,7 +247,7 @@ def tweet_submit():
 #---------------------------------------------------
 #Retweets
 
-@get('/Retweets')
+@get('/retweets')
 def seguidores():
     TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
     TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
