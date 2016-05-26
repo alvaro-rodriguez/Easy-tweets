@@ -8,7 +8,7 @@
   <body>
     <div class='flexslider'  >
     <form action="/" method="post">
-	<p>Nombre de usuario @<input name="nombre" id="texbox" rows="1" cols="50" type="text" /> </p>
+	<p><h3>Nombre de usuario @<input name="nombre" id="texbox" rows="1" cols="50" type="text" /> </h3></p>
     </form>
      <a href="{{authorize_url}}" class="buttonlink">Comenzar</a>
     </div> 
