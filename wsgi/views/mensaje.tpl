@@ -2,13 +2,9 @@
    <body>
   <div class='aside'>
    %for d in doc['users']:
-	  <div class="flexslider" width="100%" >
-	     <ul class="slides" width="100%" >
 	     <p><a href=https://www.twitter.com/{{d['screen_name']}} >{{d['name']}} , @{{d['screen_name']}} </a> De {{d['location']}}</p>
 	     <p>{{d['description']}}
 	     <img {{d['profile_image_url']}}/>
-	     </ul>
-	  </div><!-- FlexSlider -->
 	%end
    </div>
 
