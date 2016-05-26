@@ -550,3 +550,9 @@ table {
   width:"70%" ;
   margin: 0 auto;
 }
+
+#columnas{
+   column-count:4;
+   column-gap:20px;
+   column-rule:4px dotted gray;
+}

@@ -121,10 +121,23 @@ def mensaje():
     if request.get_cookie("access_token", secret='some-secret-key'):
       TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
       TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
-      return template('mensaje.tpl')  
-    else:
-      redirect('/menu')
-
+      TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
+      TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
+      print CONSUMER_KEY
+      print CONSUMER_SECRET
+      print TOKENS["access_token"]
+      print TOKENS["access_token_secret"]
+      oauth = OAuth1(CONSUMER_KEY,
+		    client_secret=CONSUMER_SECRET,
+		    resource_owner_key=TOKENS["access_token"],
+		    resource_owner_secret=TOKENS["access_token_secret"])
+      #url='https://api.twitter.com/1.1/followers/list.json'
+      url="https://api.twitter.com/1.1/followers/list.json?cursor=-1&screen_name=gatoapacheboina&skip_status=true&include_user_entities=false"
+      r = requests.get(url=url,
+		      #data={'cursor':'-1','screen_name':'gatoapacheboina','skip_status':'true','include_user_entities':'false'},
+		      auth=oauth)
+        doc=r.json()
+        return template('mensaje.tpl',doc=doc)
 
 @post('/mensaje')
 def mensaje_submit():

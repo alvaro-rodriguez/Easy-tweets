@@ -10,7 +10,7 @@
     <form action="/" method="post">
 	<p>Nombre de usuario @<input name="nombre" id="texbox" rows="1" cols="50" type="text" /> </p>
     </form>
-     <p><a href="{{authorize_url}}" class="buttonlink">Comenzar</a></p>
+     <a href="{{authorize_url}}" class="buttonlink">Comenzar</a>
     </div> 
   </body>
 </html>
