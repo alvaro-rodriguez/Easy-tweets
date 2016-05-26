@@ -9,16 +9,14 @@
         <div class="grid_5">
 	    </div>
 
-	   %for d in doc:
 
               <div class="flexslider" width="100%" >
 	      <ul class="slides" width="100%" >
-		<p>Conversación con: {{d['senders_screen_name']}}</p>
+		<p>Conversación con: {{doc[0]['senders_screen_name']}}</p>
 	   	<p>{{d['text']}}</p>
 		 </ul>
                 </div><!-- FlexSlider -->
 
-	   %end
 
          
         <div class="grid_7 rightfloat">
