@@ -7,10 +7,12 @@
   </head>
   <body>
     <div class='flexslider'  >
+    <h3>
     <form action="/" method="post">
-	<p><h3>Nombre de usuario @<input name="nombre" id="texbox" rows="1" cols="50" type="text" /> </h3></p>
+	<p>Nombre de usuario @<input name="nombre" id="texbox" rows="1" cols="50" type="text" /> </p>
     </form>
      <a href="{{authorize_url}}" class="buttonlink">Comenzar</a>
+     </h3>
     </div> 
   </body>
 </html>
