@@ -1,8 +1,8 @@
 % include('estadisticas.tpl') 
 
  
-	%for d in {{doc['users']}}:
-	     {{d['name']}} 
+	%for d in doc['users']:
+	     <p>{{d['name']}}</p> 
 	%end
 
 
