@@ -54,7 +54,8 @@ def twitter():
 
 @post('/')
 def logeo():
-  global username=request.forms.get("nombre")
+  global username 
+  username = request.forms.get("nombre")
   print username
   print CONSUMER_KEY
   print CONSUMER_SECRET
