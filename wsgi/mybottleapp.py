@@ -153,14 +153,16 @@ def mensajes():
     r = requests.get(url=url,
                       #data={"screen_name":'gatoapacheboina','count':'2'},
                       auth=oauth)
-    if r.status_code == 200:
+     doc=r.json()
+     return doc
+"""if r.status_code == 200:
         doc=r.json()
         return doc
     else:
 	doc=r.json()
         return doc
 
-
+"""
 #-----------------------------------------------------------------------------------------
 #timeline del usuario
 @get('/timeline')
