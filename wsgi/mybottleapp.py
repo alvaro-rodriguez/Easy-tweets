@@ -31,8 +31,7 @@ def get_request_token():
     TOKENS["request_token_secret"] = credentials.get('oauth_token_secret')[0]
     
 def get_access_token(TOKENS):
-  
-  oauth = OAuth1(CONSUMER_KEY,
+    oauth = OAuth1(CONSUMER_KEY,
                    client_secret=CONSUMER_SECRET,
                    resource_owner_key=TOKENS["request_token"],
                    resource_owner_secret=TOKENS["request_token_secret"],
@@ -43,7 +42,12 @@ def get_access_token(TOKENS):
   credentials = parse_qs(r.content)
   TOKENS["access_token"] = credentials.get('oauth_token')[0]
   TOKENS["access_token_secret"] = credentials.get('oauth_token_secret')[0]
-global username 
+
+username = None 
+
+def load(server):
+  global username 
+  username="prueba"
 @get('/')
 def twitter():
     get_request_token()
@@ -60,6 +64,7 @@ def logeo():
   print CONSUMER_SECRET
   print TOKENS["access_token"]
   print TOKENS["access_token_secret"]
+  return username
   
   
 @get('/callback')
