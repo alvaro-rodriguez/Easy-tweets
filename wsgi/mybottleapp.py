@@ -160,7 +160,7 @@ def timeline():
         return doc
     else:
 	doc=r.json()
-        return "<p>No time line</p>"
+        return doc
 #---------------------------------------------------------------------------------
 #Estadisticas
 
