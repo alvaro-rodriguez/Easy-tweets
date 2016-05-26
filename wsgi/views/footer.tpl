@@ -2,7 +2,7 @@
 <!-- footer area -->
 
 <footer>
-  <p><h2>Creado por Álvaro Rodríguez Márquez.</h2></p>
+  <p><h3>Creado por Álvaro Rodríguez Márquez.</h3></p>
     </div>
     
 <div id="attribution" class="wrapper clearfix" style="color:#666; font-size:11px;"></div><!--end attribution-->
