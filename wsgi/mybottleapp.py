@@ -157,8 +157,9 @@ def timeline():
                       auth=oauth)
     if r.status_code == 200:
         doc=r.json()
-        return "<p>Time line</p>"
+        return doc
     else:
+	doc=r.json()
         return "<p>No time line</p>"
 #---------------------------------------------------------------------------------
 #Estadisticas
