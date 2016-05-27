@@ -40,7 +40,6 @@
     <header class="wrapper clearfix">
 		       
         <div id="banner">        
-        	<div id="logo"><a href="basic.html"><img src="images/basic-logo.svg" alt="logo"></a></div> 
         </div>
         
         <!-- main navigation -->
