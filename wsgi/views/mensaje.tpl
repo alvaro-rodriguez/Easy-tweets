@@ -1,6 +1,7 @@
 % include('header.tpl')
    <body>
    <section>
+   <table>
   <tr>
   <div id='aside'>
   
@@ -21,5 +22,6 @@
     </form>
     <a href="/menu">Cancelar</a>
   </tr>
+  </table>
   </body>
 % include('footer.tpl')
