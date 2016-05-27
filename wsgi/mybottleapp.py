@@ -177,10 +177,11 @@ def mensajes():
                    resource_owner_key=TOKENS["access_token"],
                    resource_owner_secret=TOKENS["access_token_secret"])
     url='https://api.twitter.com/1.1/direct_messages.json?count=90'
-#    r = requests.get(url=url,
-#                      #data={"screen_name":'gatoapacheboina','count':'2'},
-#                      auth=oauth)
-#    doc=json.loads(r.text)
+    r = requests.get(url=url,
+                      #data={"screen_name":'gatoapacheboina','count':'2'},
+                      auth=oauth)
+    return str(r.status_code)
+    doc=json.loads(r.text)
     #return template('mensajes.tpl',doc=doc) 
 #    return doc
     return url
