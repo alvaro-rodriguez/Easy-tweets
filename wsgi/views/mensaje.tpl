@@ -1,12 +1,15 @@
 % include('header.tpl')
    <body>
    <section>
+  <tr>
   <div id='aside'>
+  
    %for d in doc['users']:
-	     <p><a href=https://www.twitter.com/{{d['screen_name']}} >{{d['name']}} , @{{d['screen_name']}} </a> De {{d['location']}}</p>
+	    <td> <p><a href=https://www.twitter.com/{{d['screen_name']}} >{{d['name']}} , @{{d['screen_name']}} </a> </p></td>
 	%end
    </div>
    </section>
+   <tr>
     <p>Mensaje directo:</p>
     <br />
     <form action="/mensaje" method="post">
@@ -17,6 +20,6 @@
       <p><input type="submit" class="button" value="Enviar" /></p>
     </form>
     <a href="/menu">Cancelar</a>
-
+  </tr>
   </body>
 % include('footer.tpl')
