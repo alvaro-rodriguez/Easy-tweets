@@ -94,7 +94,7 @@ def twittear():
 
 @post('/twittear')
 def tweet_submit():
-  texto = requestfrom json import loads.forms.get("twittear")
+  texto = request.forms.get("twittear")
   TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
   TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
   print CONSUMER_KEY
@@ -125,7 +125,7 @@ def mensaje():
       TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
       print CONSUMER_KEY
       print CONSUMER_SECRET
-      print TOKENS["access_token"]
+      print TO/mensajesKENS["access_token"]
       print TOKENS["access_token_secret"]
       oauth = OAuth1(CONSUMER_KEY,
 		    client_secret=CONSUMER_SECRET,
