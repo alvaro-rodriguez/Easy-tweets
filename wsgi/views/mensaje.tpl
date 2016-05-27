@@ -6,7 +6,7 @@
   <div id='aside'>
   
    %for d in doc['users']:
-	    <td> <p><a href="/mensajes/{{d['screen_name']}}" >{{d['name']}} , @{{d['screen_name']}} </a> </p></td>
+	    <td> <p><a href="/mensaje/{{d['screen_name']}}" >{{d['name']}} , @{{d['screen_name']}} </a> </p></td>
 	%end
    </div>
    </section>
