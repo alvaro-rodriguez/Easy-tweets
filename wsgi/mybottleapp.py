@@ -180,8 +180,8 @@ def mensajes():
     r = requests.get(url=url,
                       #data={"screen_name":'gatoapacheboina','count':'2'},
                       auth=oauth)
-    return str(r.status_code)
-    #doc=json.loads(r.text)
+    if r.status_code==200:
+      return r.text
     #return template('mensajes.tpl',doc=doc) 
 #    return doc
     #return url
