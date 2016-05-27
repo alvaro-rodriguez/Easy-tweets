@@ -183,6 +183,7 @@ def mensajes():
     if r.status_code==200:
       print type(r.text)
       print type(r.json)
+      print type(r.json())
       return r.text
     #return template('mensajes.tpl',doc=doc) 
 #    return doc
