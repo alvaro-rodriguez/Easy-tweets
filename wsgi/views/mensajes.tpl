@@ -1,4 +1,4 @@
-% include('estadisticas.tpl') 
+% include('header.tpl') 
 
  <!-- hero area (the grey one with a slider -->
     <section id="hero" class="clearfix">    
