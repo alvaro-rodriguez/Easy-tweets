@@ -19,9 +19,9 @@
 <!-- Google web fonts. You can get your own bundle at http://www.google.com/fonts. Don't forget to update the CSS accordingly!-->
 <link href='http://fonts.googleapis.com/css?family=Droid+Serif|Ubuntu' rel='stylesheet' type='text/css'>
 
-<link rel="stylesheet" href="static/css/normalize.css">
+<link rel="stylesheet" href="/static/css/normalize.css">
 <link rel="stylesheet" href="js/flexslider/flexslider.css">
-<link rel="stylesheet" href="static/css/basic-style.css">
+<link rel="stylesheet" href="/static/css/basic-style.css">
 
 <!-- end CSS-->
     
