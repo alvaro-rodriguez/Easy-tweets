@@ -125,7 +125,7 @@ def mensaje():
       TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
       print CONSUMER_KEY
       print CONSUMER_SECRET
-      print TO/mensajesKENS["access_token"]
+      print TOKENS["access_token"]
       print TOKENS["access_token_secret"]
       oauth = OAuth1(CONSUMER_KEY,
 		    client_secret=CONSUMER_SECRET,
