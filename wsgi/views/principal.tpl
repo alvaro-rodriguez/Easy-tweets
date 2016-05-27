@@ -4,6 +4,8 @@
   <link rel="stylesheet" href="static/css/normalize.css">
   <link rel="stylesheet" href="js/flexslider/flexslider.css">
   <link rel="stylesheet" href="static/css/basic-style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon.png">
+
   </head>
   <body>
     <div class='flexslider'  >
