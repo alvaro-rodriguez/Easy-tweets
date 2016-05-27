@@ -181,7 +181,7 @@ def mensajes():
                       #data={"screen_name":'gatoapacheboina','count':'2'},
                       auth=oauth)
     if r.status_code==200:
-      return r.text
+      return r.json
     #return template('mensajes.tpl',doc=doc) 
 #    return doc
     #return url
