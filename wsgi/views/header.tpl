@@ -14,7 +14,7 @@
 <!-- Mobile viewport -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon.png">
 <!-- CSS-->
 <!-- Google web fonts. You can get your own bundle at http://www.google.com/fonts. Don't forget to update the CSS accordingly!-->
 <link href='http://fonts.googleapis.com/css?family=Droid+Serif|Ubuntu' rel='stylesheet' type='text/css'>
