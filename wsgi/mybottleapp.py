@@ -117,7 +117,8 @@ def tweet_submit():
 #-----------------------------------------------------------------------------------------
 #mensajes directos
 @get('/mensaje')
-def mensaje():
+@get('/mensaje/<name>')
+def mensaje(name):
     if request.get_cookie("access_token", secret='some-secret-key'):
       TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
       TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
@@ -137,7 +138,7 @@ def mensaje():
 		      #data={'cursor':'-1','screen_name':'gatoapacheboina','skip_status':'true','include_user_entities':'false'},
 		      auth=oauth)
       doc=r.json()
-      return template('mensaje.tpl',doc=doc)
+      return template('mensaje.tpl',doc=doc,name=name)
 
 @post('/mensaje')
 def mensaje_submit():
