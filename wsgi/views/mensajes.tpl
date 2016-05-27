@@ -12,9 +12,10 @@
 
               <div class="flexslider" width="100%" >
 	      <ul class="slides" width="100%" >
-		<p>Conversación con: {{doc['senders_screen_name']}}</p>
+	      %for d in doc: 
+		<p>Conversación con: {{d['senders_screen_name']}}</p>
 	   	<p>{{d['text']}}</p>
-		 </ul>
+	      %end
                 </div><!-- FlexSlider -->
 
 
