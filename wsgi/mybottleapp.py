@@ -5,7 +5,7 @@ from requests_oauthlib import OAuth1
 from requests_oauthlib import OAuth2Session
 from oauthlib.oauth2 import TokenExpiredError
 from urlparse import parse_qs
-import json
+from json
 import os
 REQUEST_TOKEN_URL = "https://api.twitter.com/oauth/request_token"
 AUTHENTICATE_URL = "https://api.twitter.com/oauth/authenticate?oauth_token="
@@ -94,7 +94,7 @@ def twittear():
 
 @post('/twittear')
 def tweet_submit():
-  texto = request.forms.get("twittear")
+  texto = requestfrom json import loads.forms.get("twittear")
   TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
   TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
   print CONSUMER_KEY
@@ -180,7 +180,7 @@ def mensajes():
     r = requests.get(url=url,
                       #data={"screen_name":'gatoapacheboina','count':'2'},
                       auth=oauth)
-    doc=r 
+    doc=json.loads(r.text)
     #return template('mensajes.tpl',doc=doc) 
     return doc
 """if r.status_code == 200:
