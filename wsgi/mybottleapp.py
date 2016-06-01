@@ -4,6 +4,7 @@ import requests
 from requests_oauthlib import OAuth1
 from requests_oauthlib import OAuth2Session
 from oauthlib.oauth2 import TokenExpiredError
+from beaker.middleware import SessionMiddleware
 from urlparse import parse_qs
 import json
 import os
@@ -367,4 +368,5 @@ import os
 from bottle import TEMPLATE_PATH
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 TEMPLATE_PATH.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi/views/')) 
-application=default_app()
+#application=default_app()
+application=app
