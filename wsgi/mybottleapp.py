@@ -226,6 +226,9 @@ def estadisticas():
 #Seguidores
 @get('/seguidores')
 def seguidores():
+  
+@post('/seguidores')
+def seguidores_submit():
     TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
     TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
     print CONSUMER_KEY
