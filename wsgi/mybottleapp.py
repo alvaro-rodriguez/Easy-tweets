@@ -369,5 +369,5 @@ import os
 from bottle import TEMPLATE_PATH
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 TEMPLATE_PATH.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi/views/')) 
-#application=default_app()
-application=app
+application=default_app()
+#application=app
