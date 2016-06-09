@@ -54,7 +54,7 @@ def twitter(name='nombre'):
     response.set_cookie("request_token", TOKENS["request_token"],secret='some-secret-key')
     response.set_cookie("request_token_secret", TOKENS["request_token_secret"],secret='some-secret-key')
     return template('principal.tpl', authorize_url=authorize_url)
-
+"
 @post('/')
 def logeo():
   username = request.forms.get("nombre")
@@ -63,7 +63,7 @@ def logeo():
   print CONSUMER_SECRET
   print TOKENS["access_token"]
   print TOKENS["access_token_secret"]
-   
+ "  
   
 @get('/callback')
 def get_verifier():
