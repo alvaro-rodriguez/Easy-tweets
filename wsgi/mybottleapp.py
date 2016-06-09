@@ -47,9 +47,6 @@ def get_access_token(TOKENS):
 
 username = None
 
-def load(server):
-  global username 
-
 @get('/<name>')
 def twitter(name='nombre'):
     get_request_token()
