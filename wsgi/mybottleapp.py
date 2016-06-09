@@ -46,7 +46,7 @@ def get_access_token(TOKENS):
   TOKENS["access_token_secret"] = credentials.get('oauth_token_secret')[0]
 
 username = None
-
+@get('/<name>')
 @get('/<name>')
 def twitter(name='nombre'):
     get_request_token()
