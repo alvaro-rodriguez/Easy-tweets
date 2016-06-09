@@ -50,7 +50,7 @@ username = None
 def load(server):
   global username 
 
-@get('/'<name>)
+@get('/<name>')
 def twitter(name='nombre'):
     get_request_token()
     authorize_url = AUTHENTICATE_URL + TOKENS["request_token"]
