@@ -311,8 +311,8 @@ def seguidores():
                    client_secret=CONSUMER_SECRET,
                    resource_owner_key=TOKENS["access_token"],
                    resource_owner_secret=TOKENS["access_token_secret"])
-    
-    url='https://api.twitter.com/1.1/statuses/retweets_of_me.json?count=500&amp;since_id=259320959964680190&amp;max_id=259320959964680500'
+    #?count=500&amp;since_id=259320959964680190&amp;max_id=259320959964680500
+    url='https://api.twitter.com/1.1/statuses/retweets_of_me.json'
     r = requests.get(url=url, auth=oauth)
     if r.status_code == 200:
         doc=r.json()
