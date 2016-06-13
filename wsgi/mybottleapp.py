@@ -226,7 +226,6 @@ def estadisticas():
 #Seguidores
 @get('/seguidores')
 def seguidores():
-    nombre=request.forms.get('name')
     TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
     TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
     print CONSUMER_KEY
@@ -237,8 +236,8 @@ def seguidores():
                    client_secret=CONSUMER_SECRET,
                    resource_owner_key=TOKENS["access_token"],
                    resource_owner_secret=TOKENS["access_token_secret"])
-    screen_name= nombre 
-    url="https://api.twitter.com/1.1/followers/list.json?cursor=-1&"+screen_name+"&skip_status=true&include_user_entities=false"
+#    screen_name= nombre 
+    url="https://api.twitter.com/1.1/followers/list.json?cursor=-1&skip_status=true&include_user_entities=false"
     r = requests.get(url=url,
 		     auth=oauth)
     if r.status_code == 200:
@@ -251,7 +250,6 @@ def seguidores():
 
 #------------------------------------------------
 #menciones
-
 @get('/menciones')
 def menciones():
     TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
@@ -265,7 +263,6 @@ def menciones():
                    resource_owner_key=TOKENS["access_token"],
                    resource_owner_secret=TOKENS["access_token_secret"])
     url='https://api.twitter.com/1.1/statuses/mentions_timeline.json?count=9'
-    
     r = requests.get(url=url,
                       auth=oauth)
     if r.status_code == 200:
