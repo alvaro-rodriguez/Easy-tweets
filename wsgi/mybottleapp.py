@@ -319,7 +319,7 @@ def seguidores():
         return doc
         #return template('seguidores.tpl',doc=doc)
     else:
-        doc=r.json()
+        #doc=r.json()
         return doc
 
 """
