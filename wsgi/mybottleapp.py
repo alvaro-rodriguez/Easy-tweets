@@ -230,7 +230,7 @@ def seguidores():
   
 @post('/seguidores')
 def seguidores_submit():
-    name=request.forms.get('name')
+    nombre=request.forms.get('name')
     TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
     TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
     print CONSUMER_KEY
@@ -241,11 +241,9 @@ def seguidores_submit():
                    client_secret=CONSUMER_SECRET,
                    resource_owner_key=TOKENS["access_token"],
                    resource_owner_secret=TOKENS["access_token_secret"])
-    #url='https://api.twitter.com/1.1/followers/list.json'
-    screen_name= name 
+    screen_name= nombre 
     url="https://api.twitter.com/1.1/followers/list.json?cursor=-1&"+screen_name+"&skip_status=true&include_user_entities=false"
     r = requests.get(url=url,
-		     #data={'cursor':'-1','screen_name':'gatoapacheboina','skip_status':'true','include_user_entities':'false'},
 		     auth=oauth)
     if r.status_code == 200:
         doc=r.json()
