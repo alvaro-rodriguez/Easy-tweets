@@ -1,6 +1,6 @@
 
 % include('estadisticas.tpl') 
-% include('form_seguidores.tpl') 
+
    <section>
     </div>
    </section>
