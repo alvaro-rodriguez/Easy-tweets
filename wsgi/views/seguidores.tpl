@@ -1,5 +1,5 @@
 % include('estadisticas.tpl') 
-% include('form_seguidores.tpl') 
+
  <!-- hero area (the grey one with a slider -->
     <section id="hero" class="clearfix">    
     <!-- responsive FlexSlider image slideshow -->
