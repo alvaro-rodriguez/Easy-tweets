@@ -225,10 +225,6 @@ def estadisticas():
 #----------------------------------------------
 #Seguidores
 @get('/seguidores')
-def seguidores():
-  return template('form_seguidores.tpl')
-  
-@post('/seguidores')
 def seguidores_submit():
     nombre=request.forms.get('name')
     TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
@@ -257,7 +253,6 @@ def seguidores_submit():
 #menciones
 
 @get('/menciones')
-def menciones():
     TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
     TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
     print CONSUMER_KEY
