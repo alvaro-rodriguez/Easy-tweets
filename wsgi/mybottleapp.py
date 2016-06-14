@@ -207,15 +207,14 @@ def timeline():
                    resource_owner_key=TOKENS["access_token"],
                    resource_owner_secret=TOKENS["access_token_secret"])
     url='https://api.twitter.com/1.1/statuses/user_timeline.json'
-    r = requests.get(url=url,
-                      data={"screen_name":'gatoapacheboina','count':'2'},
-                      auth=oauth)
-    if r.status_code == 200:
-        doc=r.json()
-        return doc
+    r = requests.get(url=url,data={"screen_name":'gatoapacheboina','count':'2'},auth=oauth)
+   
+   if r.status_code == 200:
+        #doc=r.json()
+        return r
     else:
-	doc=r.json()
-        return doc
+	#doc=r.json()
+        return r
 #---------------------------------------------------------------------------------
 #Estadisticas
 
