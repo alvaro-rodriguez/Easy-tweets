@@ -209,7 +209,7 @@ def timeline():
     url='https://api.twitter.com/1.1/statuses/user_timeline.json'
     r = requests.get(url=url,data={"screen_name":'gatoapacheboina','count':'2'},auth=oauth)
    
-   if r.status_code == 200:
+    if r.status_code == 200:
         #doc=r.json()
         return r
     else:
