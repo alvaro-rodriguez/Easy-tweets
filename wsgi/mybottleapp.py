@@ -315,11 +315,11 @@ def seguidores():
     r = requests.get(url=url, auth=oauth)
     if r.status_code == 200:
         #doc=r.json()
-        return json(r)
+        return r
         #return template('seguidores.tpl',doc=doc)
     else:
         #doc=r.json()
-        return doc
+        return r
 
 """
 @post('/retweets')
